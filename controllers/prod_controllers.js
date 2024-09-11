@@ -46,13 +46,13 @@ exports.editarProductos=async(req,res)=> {
     try{
         const producto=await productos.findByIdAndUpdate(req.params.id, req.body, {new:true});
         if(!producto){
-            res.status(404).send({msg:"El cliente no existe"});
+            res.status(404).send({msg:"El producto no existe"});
         }else{
             res.json(producto);
         }
     }catch(error){
-        console.log("error al mostrar un cliente")
-        res.status(500).send("error al mostrar un cliente");
+        console.log("error al mostrar un producto")
+        res.status(500).send("error al mostrar un producto");
     }   
 }
 
